@@ -18,6 +18,6 @@ public class MonthlyLimitModel extends BaseModel{
   private int limitAmount;
 
   @OneToOne
-  private CategoryModel categoryModel;
+  private CategoryModel category;
 
 }

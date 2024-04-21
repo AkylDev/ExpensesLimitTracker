@@ -6,10 +6,10 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "t_exchange_rates")
 @Getter
 @Setter
+@Entity
+@Table(name = "t_exchange_rates")
 public class ExchangeRateModel extends BaseModel {
   @Column(name = "KZT")
   private double kztValue;

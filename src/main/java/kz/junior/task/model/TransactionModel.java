@@ -25,5 +25,5 @@ public class TransactionModel extends BaseModel{
   private double rub;
 
   @OneToOne
-  private CategoryModel categoryModel;
+  private CategoryModel category;
 }
