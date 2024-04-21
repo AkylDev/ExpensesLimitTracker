@@ -24,6 +24,6 @@ public class TransactionModel extends BaseModel{
   @Column(name = "RUB")
   private double rub;
 
-  @OneToOne
+  @ManyToOne
   private CategoryModel category;
 }

@@ -1,6 +1,7 @@
 package kz.junior.task.dto;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import kz.junior.task.model.CategoryModel;
 import lombok.Getter;
@@ -17,6 +18,6 @@ public class TransactionDTO {
   private double kzt;
   private double rub;
 
-  @OneToOne
-  private CategoryDTO category;//map
+  @ManyToOne
+  private CategoryDTO category;
 }
