@@ -15,7 +15,6 @@
 
 
 ## API Endpoints
-## API Reference
 
 #### Get current exchange rate API
 
