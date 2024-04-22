@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.YearMonth;
 import java.util.List;
 
 @Service
@@ -48,8 +47,6 @@ public class TransactionServiceImpl implements TransactionService {
       monthlyLimitService.setNewBalance(limitToday);
 
       return transactionMapper.toDto(transactionRepository.save(transactionMapper.fromDto(transactionDTO)));
-
-
   }
 
   @Override

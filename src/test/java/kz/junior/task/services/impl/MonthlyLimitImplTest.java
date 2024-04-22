@@ -13,7 +13,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.YearMonth;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class MonthlyLimitImplTest {
 
     MonthlyLimitDTO monthlyLimitDTO = new MonthlyLimitDTO();
     monthlyLimitDTO.setId(44L);
-    monthlyLimitDTO.setCreatedDate(YearMonth.now());
+    monthlyLimitDTO.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
     monthlyLimitDTO.setLimitAmount(1000);
     monthlyLimitDTO.setCategory(categoryDTO);
 
@@ -72,14 +73,14 @@ public class MonthlyLimitImplTest {
 
     final MonthlyLimitModel monthlyLimitModel = new MonthlyLimitModel();
     monthlyLimitModel.setId(44L);
-    monthlyLimitModel.setCreatedDate(YearMonth.now());
+    monthlyLimitModel.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
     monthlyLimitModel.setLimitAmount(1000);
     monthlyLimitModel.setCategory(categoryModel);
     when(monthlyLimitRepository.findAll()).thenReturn(Collections.singletonList(monthlyLimitModel));
 
     final MonthlyLimitDTO monthlyLimitDTO = new MonthlyLimitDTO();
     monthlyLimitDTO.setId(44L);
-    monthlyLimitDTO.setCreatedDate(YearMonth.now());
+    monthlyLimitDTO.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
     monthlyLimitDTO.setLimitAmount(1000);
     monthlyLimitDTO.setCategory(categoryDTO);
     when(monthlyLimitMapper.toMonthlyLimitDtoList(Collections.singletonList(monthlyLimitModel)))

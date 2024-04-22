@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.YearMonth;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 @SpringBootTest
 public class MonthlyLimitTest {
@@ -22,7 +23,7 @@ public class MonthlyLimitTest {
 
     MonthlyLimitModel model = new MonthlyLimitModel();
     model.setId(77L);
-    model.setCreatedDate(YearMonth.now());
+    model.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
     model.setLimitAmount(1000);
     model.setCategory(category);
 
@@ -40,7 +41,7 @@ public class MonthlyLimitTest {
 
     MonthlyLimitDTO dto = new MonthlyLimitDTO();
     dto.setId(77L);
-    dto.setCreatedDate(YearMonth.now());
+    dto.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
     dto.setLimitAmount(1000);
     dto.setCategory(category);
 
