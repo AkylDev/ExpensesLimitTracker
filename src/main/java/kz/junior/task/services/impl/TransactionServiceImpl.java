@@ -50,7 +50,8 @@ public class TransactionServiceImpl implements TransactionService {
   }
 
   @Override
-  public List<TransactionDTO> getTranasactionsList() {
-    return transactionMapper.toTransactionDtoList(transactionRepository.findAll());
+  public List<TransactionDTO> getExceededTransactions() {
+    return transactionMapper.toTransactionDtoList(transactionRepository.getAllByLimitExceededTrue());
   }
+
 }

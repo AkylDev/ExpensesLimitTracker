@@ -7,5 +7,6 @@ import java.util.List;
 public interface TransactionService {
   TransactionDTO setTransaction(TransactionDTO transactionDTO);
 
-  List<TransactionDTO> getTranasactionsList();
+  List<TransactionDTO> getExceededTransactions();
+
 }

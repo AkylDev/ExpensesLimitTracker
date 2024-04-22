@@ -22,7 +22,7 @@ public class TransactionController {
   }
 
   @GetMapping
-  public ResponseEntity<List<TransactionDTO>> getAllTransactions(){
-    return new ResponseEntity<>(transactionService.getTranasactionsList(), HttpStatus.OK);
+  public ResponseEntity<List<TransactionDTO>> getAllExceededTransactions(){
+    return new ResponseEntity<>(transactionService.getExceededTransactions(), HttpStatus.OK);
   }
 }
