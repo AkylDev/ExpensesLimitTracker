@@ -1,9 +1,6 @@
 package kz.junior.task.dto;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-import kz.junior.task.model.CategoryModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +14,7 @@ public class TransactionDTO {
   private int expense;
   private double kzt;
   private double rub;
+  private boolean limitExceeded;
 
   @ManyToOne
   private CategoryDTO category;

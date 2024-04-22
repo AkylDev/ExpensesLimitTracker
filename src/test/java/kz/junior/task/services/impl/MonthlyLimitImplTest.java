@@ -51,7 +51,7 @@ public class MonthlyLimitImplTest {
 
     when(monthlyLimitRepository.save(monthlyLimitModel)).thenReturn(monthlyLimitModel);
 
-    MonthlyLimitDTO result = monthlyLimitService.setLimit(monthlyLimitDTO);
+    MonthlyLimitDTO result = monthlyLimitService.setNewLimit(monthlyLimitDTO);
 
     verify(monthlyLimitMapper, times(2)).fromDto(monthlyLimitDTO);
     verify(monthlyLimitRepository).save(monthlyLimitModel);

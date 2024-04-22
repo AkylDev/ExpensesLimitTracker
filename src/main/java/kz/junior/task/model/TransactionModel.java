@@ -18,11 +18,14 @@ public class TransactionModel extends BaseModel{
   @Column(name = "expense_USD")
   private int expense;
 
-  @Column(name = "KZT")
+  @Column(name = "expense_KZT")
   private double kzt;
 
-  @Column(name = "RUB")
+  @Column(name = "expense_RUB")
   private double rub;
+
+  @Column(name = "limit_exceeded")
+  private boolean limitExceeded;
 
   @ManyToOne
   private CategoryModel category;

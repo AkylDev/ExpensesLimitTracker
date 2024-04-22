@@ -2,7 +2,6 @@ package kz.junior.task.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.mapstruct.Mapper;
 
 import java.time.YearMonth;
 
@@ -17,6 +16,9 @@ public class MonthlyLimitModel extends BaseModel{
 
   @Column(name = "limit_amount")
   private int limitAmount;
+
+  @Column(name = "limit_balance")
+  private int limitBalance;
 
   @ManyToOne
   private CategoryModel category;

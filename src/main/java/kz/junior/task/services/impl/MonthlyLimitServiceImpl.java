@@ -18,10 +18,20 @@ public class MonthlyLimitServiceImpl implements MonthlyLimitService {
   private final MonthlyLimitMapper monthlyLimitMapper;
 
   @Override
-  public MonthlyLimitDTO setLimit(MonthlyLimitDTO monthlyLimitDTO) {
+  public MonthlyLimitDTO setNewLimit(MonthlyLimitDTO monthlyLimitDTO) {
     monthlyLimitDTO.setCreatedDate(YearMonth.now());
-    
+    monthlyLimitDTO.setLimitBalance(monthlyLimitDTO.getLimitAmount());
     return monthlyLimitMapper.toDto(monthlyLimitRepository.save(monthlyLimitMapper.fromDto(monthlyLimitDTO)));
+  }
+
+  @Override
+  public MonthlyLimitDTO setNewBalance(MonthlyLimitDTO monthlyLimitDTO) {
+    return monthlyLimitMapper.toDto(monthlyLimitRepository.save(monthlyLimitMapper.fromDto(monthlyLimitDTO)));
+  }
+
+  @Override
+  public MonthlyLimitDTO getMonthlyLimitByDateAndCategory(YearMonth date, Long id) {
+    return monthlyLimitMapper.toDto(monthlyLimitRepository.findByCreatedDateAndCategory_Id(date, id));
   }
 
   @Override

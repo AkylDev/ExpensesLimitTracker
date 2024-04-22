@@ -1,9 +1,6 @@
 package kz.junior.task.dto;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-import kz.junior.task.model.CategoryModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +12,7 @@ public class MonthlyLimitDTO {
   private Long id;
   private YearMonth createdDate;
   private int limitAmount;
+  private int limitBalance;
 
   @ManyToOne
   private CategoryDTO category;

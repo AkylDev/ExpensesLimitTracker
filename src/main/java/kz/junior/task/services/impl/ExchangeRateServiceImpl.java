@@ -36,6 +36,11 @@ public class ExchangeRateServiceImpl implements ExchangeRateService {
   }
 
   @Override
+  public ExchangeRateDTO findLastDataFromTable() {
+    return exchangeMapper.toDto(exchangeRateRepository.findFirstByOrderByIdDesc());
+  }
+
+  @Override
 //  @Scheduled(cron = "0 * * * * *")
   public void getCurrentExchangeRate() throws JsonProcessingException {
     ExchangeRateDTO exchangeRateDto = new ExchangeRateDTO();
