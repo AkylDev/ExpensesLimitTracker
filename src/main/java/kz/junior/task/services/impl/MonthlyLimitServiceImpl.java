@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.YearMonth;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Service
@@ -19,7 +21,7 @@ public class MonthlyLimitServiceImpl implements MonthlyLimitService {
 
   @Override
   public MonthlyLimitDTO setNewLimit(MonthlyLimitDTO monthlyLimitDTO) {
-    monthlyLimitDTO.setCreatedDate(YearMonth.now());
+    monthlyLimitDTO.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
     monthlyLimitDTO.setLimitBalance(monthlyLimitDTO.getLimitAmount());
     return monthlyLimitMapper.toDto(monthlyLimitRepository.save(monthlyLimitMapper.fromDto(monthlyLimitDTO)));
   }
@@ -30,8 +32,9 @@ public class MonthlyLimitServiceImpl implements MonthlyLimitService {
   }
 
   @Override
-  public MonthlyLimitDTO getMonthlyLimitByDateAndCategory(YearMonth date, Long id) {
-    return monthlyLimitMapper.toDto(monthlyLimitRepository.findByCreatedDateAndCategory_Id(date, id));
+  public MonthlyLimitDTO getMonthlyLimitByDateAndCategory(Long id) {
+//    System.out.println(monthlyLimitRepository.findFirstByCategory_IdOrderByCreatedDateDesc(date, id).getId() + "HELLO");
+    return monthlyLimitMapper.toDto(monthlyLimitRepository.findFirstByCategory_IdOrderByCreatedDateDesc(id));
   }
 
   @Override

@@ -9,6 +9,7 @@ import kz.junior.task.repositories.ExchangeRateRepository;
 import kz.junior.task.services.ExchangeRateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -41,7 +42,7 @@ public class ExchangeRateServiceImpl implements ExchangeRateService {
   }
 
   @Override
-//  @Scheduled(cron = "0 * * * * *")
+  @Scheduled(cron = "0 * * * * *")
   public void getCurrentExchangeRate() throws JsonProcessingException {
     ExchangeRateDTO exchangeRateDto = new ExchangeRateDTO();
     String jsonResponse = getExchangeRateJson();

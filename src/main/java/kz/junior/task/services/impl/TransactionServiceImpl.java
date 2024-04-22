@@ -32,9 +32,8 @@ public class TransactionServiceImpl implements TransactionService {
   @Override
   public TransactionDTO setTransaction(TransactionDTO transactionDTO) {
     MonthlyLimitDTO limitToday = monthlyLimitService.
-            getMonthlyLimitByDateAndCategory(YearMonth.now(), transactionDTO.getCategory().getId());
+            getMonthlyLimitByDateAndCategory(transactionDTO.getCategory().getId());
 
-    if (limitToday.getLimitBalance() >= 0){
       transactionDTO.setTransactionDate(LocalDate.now());
       ExchangeRateDTO lastExchangeRateData = exchangeRateService.findLastDataFromTable();
       transactionDTO.setKzt(lastExchangeRateData.getKztValue() * transactionDTO.getExpense());
@@ -49,9 +48,7 @@ public class TransactionServiceImpl implements TransactionService {
       monthlyLimitService.setNewBalance(limitToday);
 
       return transactionMapper.toDto(transactionRepository.save(transactionMapper.fromDto(transactionDTO)));
-    }else {
-      return null;
-    }
+
 
   }
 

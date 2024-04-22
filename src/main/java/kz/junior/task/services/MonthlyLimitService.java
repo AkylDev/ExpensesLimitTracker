@@ -11,7 +11,7 @@ public interface MonthlyLimitService {
 
   MonthlyLimitDTO setNewBalance(MonthlyLimitDTO monthlyLimitDTO);
 
-  MonthlyLimitDTO getMonthlyLimitByDateAndCategory(YearMonth date, Long id);
+  MonthlyLimitDTO getMonthlyLimitByDateAndCategory(Long id);
 
   List<MonthlyLimitDTO> getAllLimits();
 }

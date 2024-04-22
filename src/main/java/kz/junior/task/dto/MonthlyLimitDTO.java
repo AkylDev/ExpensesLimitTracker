@@ -4,13 +4,13 @@ import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.YearMonth;
+import java.time.ZonedDateTime;
 
 @Getter
 @Setter
 public class MonthlyLimitDTO {
   private Long id;
-  private YearMonth createdDate;
+  private ZonedDateTime createdDate;
   private int limitAmount;
   private int limitBalance;
 

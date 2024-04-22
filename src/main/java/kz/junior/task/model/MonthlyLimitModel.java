@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.YearMonth;
+import java.time.ZonedDateTime;
 
 @Getter
 @Setter
@@ -12,7 +13,7 @@ import java.time.YearMonth;
 public class MonthlyLimitModel extends BaseModel{
 
   @Column(name = "created_date")
-  private YearMonth createdDate;
+  private ZonedDateTime createdDate;
 
   @Column(name = "limit_amount")
   private int limitAmount;
