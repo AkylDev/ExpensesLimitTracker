@@ -15,6 +15,35 @@
 
 
 ## API Endpoints
+## API Reference
+
+#### Get current exchange rate API
+
+```http
+  POST /rates
+```
+#### Set monthly limit
+
+```http
+  POST /limits
+```
+#### Get all monthly limit existed
+
+```http
+  GET /limits
+```
+
+#### Make a transaction
+
+```http
+  POST /transactions
+```
+
+#### Get all exceeded transactions
+
+```http
+  POST /transactions
+```
 
 ## База данных
 
