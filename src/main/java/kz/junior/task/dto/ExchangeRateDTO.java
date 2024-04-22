@@ -1,6 +1,5 @@
 package kz.junior.task.dto;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
