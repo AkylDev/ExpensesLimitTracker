@@ -8,6 +8,8 @@ import kz.junior.task.dto.TransactionDTO;
 import kz.junior.task.mapper.TransactionMapper;
 import kz.junior.task.model.TransactionModel;
 import kz.junior.task.repositories.TransactionRepository;
+import kz.junior.task.services.ExchangeRateService;
+import kz.junior.task.services.MonthlyLimitService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,10 +26,10 @@ import static org.mockito.Mockito.*;
 public class TransactionServiceImplTest {
 
   @Mock
-  private MonthlyLimitServiceImpl monthlyLimitService;
+  private MonthlyLimitService monthlyLimitService;
 
   @Mock
-  private ExchangeRateServiceImpl exchangeRateService;
+  private ExchangeRateService exchangeRateService;
 
   @Mock
   private TransactionRepository transactionRepository;

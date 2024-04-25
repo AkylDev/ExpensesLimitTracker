@@ -21,19 +21,12 @@ public class CategoryController {
 
     final CategoryDTO savedCategory = categoryService.save(categoryDTO);
 
-    return new ResponseEntity<CategoryDTO>(savedCategory, HttpStatus.OK);
+    return new ResponseEntity<CategoryDTO>(savedCategory, HttpStatus.CREATED);
   }
 
   @GetMapping
   public ResponseEntity<List<CategoryDTO>> getCategories(){
     return new ResponseEntity<>(categoryService.getCategories(), HttpStatus.OK);
-  }
-
-
-  @DeleteMapping
-  public ResponseEntity deleteCategory(@PathVariable final Long id){
-    categoryService.deleteCategoryById(id);
-    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
 }

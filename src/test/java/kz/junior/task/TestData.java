@@ -4,8 +4,6 @@ import kz.junior.task.dto.CategoryDTO;
 import kz.junior.task.dto.ExchangeRateDTO;
 import kz.junior.task.dto.MonthlyLimitDTO;
 import kz.junior.task.dto.TransactionDTO;
-import kz.junior.task.model.CategoryModel;
-import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
