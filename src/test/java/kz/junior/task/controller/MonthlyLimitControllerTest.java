@@ -3,6 +3,8 @@ package kz.junior.task.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kz.junior.task.TestData;
 import kz.junior.task.dto.CategoryDTO;
+import kz.junior.task.dto.MonthlyLimitDTO;
+import kz.junior.task.services.MonthlyLimitService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,30 +21,26 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 @ExtendWith(SpringExtension.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-public class CategoryControllerTest {
+public class MonthlyLimitControllerTest {
   @Autowired
   private MockMvc mockMvc;
 
   @Test
-  public void testThatCategoryIsReturnsCategories() throws Exception{
-    mockMvc.perform(MockMvcRequestBuilders.get("/categories"))
-            .andExpect(MockMvcResultMatchers.status().isOk())
-            .andExpect(MockMvcResultMatchers.content().
-                    string("[{\"id\":1,\"name\":\"goods\"},{\"id\":2,\"name\":\"services\"}]"));
-  }
+  public void testThatLimitIsCreated() throws Exception{
+    final MonthlyLimitDTO monthlyLimitDTO = new MonthlyLimitDTO();
+    MonthlyLimitDTO.builder()
+            .limitAmount(1100)
+            .category(new CategoryDTO(1L, "something"))
+            .build();
 
-
-  @Test
-  public void testThatCategoryIsCreated() throws Exception{
-    final CategoryDTO categoryDTO = TestData.testCategoryDtoData();
     final ObjectMapper objectMapper = new ObjectMapper();
-    final String categoryJson = objectMapper.writeValueAsString(categoryDTO);
+    final String limitJson = objectMapper.writeValueAsString(monthlyLimitDTO);
 
-    mockMvc.perform(MockMvcRequestBuilders.post("/categories")
+    mockMvc.perform(MockMvcRequestBuilders.post("/limits")
                     .contentType(MediaType.APPLICATION_JSON)
-                    .content(categoryJson))
-            .andExpect(MockMvcResultMatchers.status().isCreated())
-            .andExpect(MockMvcResultMatchers.jsonPath("$.name").value(categoryDTO.getName()));
+                    .content(limitJson))
+            .andExpect(MockMvcResultMatchers.status().isCreated());
   }
+
 
 }

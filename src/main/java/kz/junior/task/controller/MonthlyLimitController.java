@@ -18,7 +18,7 @@ public class MonthlyLimitController {
   @PostMapping
   public ResponseEntity<MonthlyLimitDTO> setMonthlyLimit(@RequestBody MonthlyLimitDTO monthlyLimitDTO){
     final MonthlyLimitDTO savedLimit = monthlyLimitService.setNewLimit(monthlyLimitDTO);
-    return new ResponseEntity<MonthlyLimitDTO>(savedLimit, HttpStatus.OK);
+    return new ResponseEntity<MonthlyLimitDTO>(savedLimit, HttpStatus.CREATED);
   }
 
   @GetMapping
