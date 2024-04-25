@@ -1,13 +1,15 @@
 package kz.junior.task.dto;
 
 import jakarta.persistence.ManyToOne;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class TransactionDTO {
   private Long id;
   private LocalDate transactionDate;

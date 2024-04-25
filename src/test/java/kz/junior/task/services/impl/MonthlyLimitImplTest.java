@@ -1,5 +1,6 @@
 package kz.junior.task.services.impl;
 
+import kz.junior.task.TestData;
 import kz.junior.task.dto.CategoryDTO;
 import kz.junior.task.dto.MonthlyLimitDTO;
 import kz.junior.task.mapper.MonthlyLimitMapper;
@@ -13,8 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,15 +34,7 @@ public class MonthlyLimitImplTest {
 
   @Test
   public void testThatLimitIsCreated(){
-    CategoryDTO categoryDTO = new CategoryDTO();
-    categoryDTO.setId(1L);
-    categoryDTO.setName("service");
-
-    MonthlyLimitDTO monthlyLimitDTO = new MonthlyLimitDTO();
-    monthlyLimitDTO.setId(44L);
-    monthlyLimitDTO.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
-    monthlyLimitDTO.setLimitAmount(1000);
-    monthlyLimitDTO.setCategory(categoryDTO);
+    MonthlyLimitDTO monthlyLimitDTO = TestData.testMonthlyLimitDtoData();
 
     MonthlyLimitModel monthlyLimitModel = monthlyLimitMapper.fromDto(monthlyLimitDTO);
 
@@ -71,18 +62,10 @@ public class MonthlyLimitImplTest {
     categoryDTO.setId(1L);
     categoryDTO.setName("service");
 
-    final MonthlyLimitModel monthlyLimitModel = new MonthlyLimitModel();
-    monthlyLimitModel.setId(44L);
-    monthlyLimitModel.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
-    monthlyLimitModel.setLimitAmount(1000);
-    monthlyLimitModel.setCategory(categoryModel);
+    final MonthlyLimitModel monthlyLimitModel = monthlyLimitMapper.fromDto(TestData.testMonthlyLimitDtoData());
     when(monthlyLimitRepository.findAll()).thenReturn(Collections.singletonList(monthlyLimitModel));
 
-    final MonthlyLimitDTO monthlyLimitDTO = new MonthlyLimitDTO();
-    monthlyLimitDTO.setId(44L);
-    monthlyLimitDTO.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
-    monthlyLimitDTO.setLimitAmount(1000);
-    monthlyLimitDTO.setCategory(categoryDTO);
+    final MonthlyLimitDTO monthlyLimitDTO = TestData.testMonthlyLimitDtoData();
     when(monthlyLimitMapper.toMonthlyLimitDtoList(Collections.singletonList(monthlyLimitModel)))
             .thenReturn(Collections.singletonList(monthlyLimitDTO));
 

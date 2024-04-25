@@ -1,10 +1,12 @@
 package kz.junior.task.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ExchangeRateDTO {
   private Long id;
   private double kztValue;

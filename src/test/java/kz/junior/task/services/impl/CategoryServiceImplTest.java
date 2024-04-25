@@ -1,5 +1,6 @@
 package kz.junior.task.services.impl;
 
+import kz.junior.task.TestData;
 import kz.junior.task.dto.CategoryDTO;
 import kz.junior.task.mapper.CategoryMapper;
 import kz.junior.task.model.CategoryModel;
@@ -31,13 +32,9 @@ public class CategoryServiceImplTest {
 
   @Test
   public void testThatCategoryIsSaved(){
-    CategoryDTO categoryDTO = new CategoryDTO();
-    categoryDTO.setId(77L);
-    categoryDTO.setName("cakes");
+    CategoryDTO categoryDTO = TestData.testCategoryDtoData();
 
-    CategoryModel categoryModel = new CategoryModel();
-    categoryModel.setId(77L);
-    categoryModel.setName("cakes");
+    CategoryModel categoryModel = categoryMapper.fromDto(TestData.testCategoryDtoData());
 
     when(categoryMapper.fromDto(categoryDTO)).thenReturn(categoryModel);
     when(categoryMapper.toDto(categoryModel)).thenReturn(categoryDTO);
@@ -66,14 +63,10 @@ public class CategoryServiceImplTest {
 
   @Test
   public void testGetCategoriesReturnCategoriesWhenExists(){
-    final CategoryModel categoryModel = new CategoryModel();
-    categoryModel.setId(77L);
-    categoryModel.setName("cakes");
+    final CategoryModel categoryModel = categoryMapper.fromDto(TestData.testCategoryDtoData());
     when(categoryRepository.findAll()).thenReturn(Collections.singletonList(categoryModel));
 
-    final CategoryDTO categoryDTO = new CategoryDTO();
-    categoryDTO.setId(77L);
-    categoryDTO.setName("cakes");
+    final CategoryDTO categoryDTO = TestData.testCategoryDtoData();
     when(categoryMapper.toCategoryDtoList(Collections.singletonList(categoryModel)))
             .thenReturn(Collections.singletonList(categoryDTO));
 

@@ -1,8 +1,7 @@
 package kz.junior.task.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -10,6 +9,9 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @Table(name = "t_transactions")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class TransactionModel extends BaseModel{
 
   @Column(name = "transaction_date")

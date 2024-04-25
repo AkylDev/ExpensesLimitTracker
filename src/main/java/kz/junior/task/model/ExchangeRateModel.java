@@ -3,12 +3,14 @@ package kz.junior.task.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "t_exchange_rates")
 public class ExchangeRateModel extends BaseModel {
   @Column(name = "KZT")

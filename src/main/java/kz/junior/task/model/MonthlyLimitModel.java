@@ -10,6 +10,9 @@ import java.time.ZonedDateTime;
 @Setter
 @Entity
 @Table(name = "t_monthly_limit")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MonthlyLimitModel extends BaseModel{
 
   @Column(name = "created_date")
