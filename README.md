@@ -12,7 +12,15 @@
 - Предоставление списка транзакций, превысивших лимит, с указанием суммы лимита и валюты.
 
 ## Установка и запуск:
+Копируем в свою машину:
+```http
+git clone https://github.com/Akello-web/CurrencyLimitTracker.git
+```
 
+Внутри проекта запускаем через:
+```http
+  docker-compose up
+```
 
 ## API Endpoints
 
