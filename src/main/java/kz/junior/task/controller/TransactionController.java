@@ -18,7 +18,7 @@ public class TransactionController {
   @PostMapping
   public ResponseEntity<TransactionDTO> saveExpense(@RequestBody TransactionDTO transactionDTO){
     final TransactionDTO savedTransaction = transactionService.setTransaction(transactionDTO);
-    return new ResponseEntity<TransactionDTO>(savedTransaction, HttpStatus.OK);
+    return new ResponseEntity<TransactionDTO>(savedTransaction, HttpStatus.CREATED);
   }
 
   @GetMapping
