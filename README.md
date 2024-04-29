@@ -68,4 +68,5 @@ CurrencyLimitTracker использует PostgerSQL для хранения д�
 - Gradle
 - Liquibase Migrations
 - Docker
+- Junit and Mockito Testing
 
