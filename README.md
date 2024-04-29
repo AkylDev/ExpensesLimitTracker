@@ -24,29 +24,29 @@ git clone https://github.com/Akello-web/CurrencyLimitTracker.git
 
 ## API Endpoints
 
-#### Get current exchange rate API
+#### Получение курса валют KZT/USD и RUB/USD через внешний API
 
 ```http
   POST /rates
 ```
-#### Set monthly limit
+#### Установка месячного лимита
 
 ```http
   POST /limits
 ```
-#### Get all monthly limit existed
+#### Получение всех месячных лимитов за весь период
 
 ```http
   GET /limits
 ```
 
-#### Make a transaction
+#### Произведение транзакции
 
 ```http
   POST /transactions
 ```
 
-#### Get all exceeded transactions
+#### Получение всех превысивших лимит транзакции
 
 ```http
   POST /transactions
