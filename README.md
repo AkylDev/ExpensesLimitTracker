@@ -13,12 +13,12 @@
 
 ## Установка и запуск:
 Копируем в свою машину:
-```http
+```
 git clone https://github.com/Akello-web/CurrencyLimitTracker.git
 ```
 
 Внутри проекта запускаем через:
-```http
+```
   docker-compose up
 ```
 
