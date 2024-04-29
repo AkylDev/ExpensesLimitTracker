@@ -15,41 +15,41 @@ public class TestData {
   }
 
   public static CategoryDTO testCategoryDtoData(){
-    return CategoryDTO.builder()
-            .id(11L)
-            .name("service")
-            .build();
+    CategoryDTO categoryDTO = new CategoryDTO();
+    categoryDTO.setId(11L);
+    categoryDTO.setName("service");
+    return categoryDTO;
   }
 
   public static ExchangeRateDTO testExchangeRateDtoData(){
-    return ExchangeRateDTO.builder()
-            .id(22L)
-            .kztValue(465)
-            .rubValue(93)
-            .timeLastUpdate("Wed, 24 Apr 2024 00:00:01 +0000")
-            .build();
+    ExchangeRateDTO exchangeRateDTO = new ExchangeRateDTO();
+    exchangeRateDTO.setId(22L);
+    exchangeRateDTO.setKztValue(465);
+    exchangeRateDTO.setRubValue(93);
+    exchangeRateDTO.setTimeLastUpdate("Wed, 24 Apr 2024 00:00:01 +0000");
+    return exchangeRateDTO;
   }
 
   public static MonthlyLimitDTO testMonthlyLimitDtoData(){
-    return MonthlyLimitDTO.builder()
-            .id(33L)
-            .limitAmount(1000)
-            .limitBalance(1000)
-            .createdDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")))
-            .category(TestData.testCategoryDtoData())
-            .build();
+    MonthlyLimitDTO monthlyLimitDTO = new MonthlyLimitDTO();
+    monthlyLimitDTO.setId(33L);
+    monthlyLimitDTO.setLimitAmount(1000);
+    monthlyLimitDTO.setLimitBalance(1000);
+    monthlyLimitDTO.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
+    monthlyLimitDTO.setCategory(TestData.testCategoryDtoData());
+    return monthlyLimitDTO;
   }
 
   public static TransactionDTO testTransactionDtoData(){
-    return TransactionDTO.builder()
-            .id(44L)
-            .expense(500)
-            .kzt(500 * TestData.testExchangeRateDtoData().getKztValue())
-            .rub(500 * TestData.testExchangeRateDtoData().getRubValue())
-            .transactionDate(LocalDate.now())
-            .limitExceeded(false)
-            .category(TestData.testCategoryDtoData())
-            .build();
+    TransactionDTO transactionDTO = new TransactionDTO();
+    transactionDTO.setId(44L);
+    transactionDTO.setExpense(500);
+    transactionDTO.setKzt(500 * TestData.testExchangeRateDtoData().getKztValue());
+    transactionDTO.setRub(500 * TestData.testExchangeRateDtoData().getRubValue());
+    transactionDTO.setTransactionDate(LocalDate.now());
+    transactionDTO.setLimitExceeded(false);
+    transactionDTO.setCategory(TestData.testCategoryDtoData());
+    return transactionDTO;
   }
 
 

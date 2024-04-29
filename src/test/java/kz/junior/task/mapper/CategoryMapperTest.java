@@ -1,5 +1,6 @@
 package kz.junior.task.mapper;
 
+import kz.junior.task.TestData;
 import kz.junior.task.dto.CategoryDTO;
 import kz.junior.task.model.CategoryModel;
 import org.junit.jupiter.api.Assertions;
@@ -25,9 +26,7 @@ public class CategoryMapperTest {
 
   @Test
   public void testDtoToModel(){
-    CategoryDTO dto = new CategoryDTO();
-    dto.setId(66L);
-    dto.setName("goods");
+    CategoryDTO dto = TestData.testCategoryDtoData();
 
     CategoryModel model = mapper.fromDto(dto);
 

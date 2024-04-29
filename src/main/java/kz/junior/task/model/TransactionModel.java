@@ -9,9 +9,6 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @Table(name = "t_transactions")
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class TransactionModel extends BaseModel{
 
   @Column(name = "transaction_date")

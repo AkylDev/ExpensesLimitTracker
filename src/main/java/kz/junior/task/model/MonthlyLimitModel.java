@@ -3,16 +3,12 @@ package kz.junior.task.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.YearMonth;
 import java.time.ZonedDateTime;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "t_monthly_limit")
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class MonthlyLimitModel extends BaseModel{
 
   @Column(name = "created_date")

@@ -33,20 +33,20 @@ public class TransactionServiceImpl implements TransactionService {
     MonthlyLimitDTO limitToday = monthlyLimitService.
             getMonthlyLimitByDateAndCategory(transactionDTO.getCategory().getId());
 
-      transactionDTO.setTransactionDate(LocalDate.now());
-      ExchangeRateDTO lastExchangeRateData = exchangeRateService.findLastDataFromTable();
-      transactionDTO.setKzt(lastExchangeRateData.getKztValue() * transactionDTO.getExpense());
-      transactionDTO.setRub(lastExchangeRateData.getRubValue() * transactionDTO.getExpense());
+    transactionDTO.setTransactionDate(LocalDate.now());
+    ExchangeRateDTO lastExchangeRateData = exchangeRateService.findLastDataFromTable();
+    transactionDTO.setKzt(lastExchangeRateData.getKztValue() * transactionDTO.getExpense());
+    transactionDTO.setRub(lastExchangeRateData.getRubValue() * transactionDTO.getExpense());
 
-      int leftover = limitToday.getLimitBalance() - transactionDTO.getExpense();
-      if (leftover < 0){
-        transactionDTO.setLimitExceeded(true);
-      }
+    int leftover = limitToday.getLimitBalance() - transactionDTO.getExpense();
+    if (leftover < 0){
+      transactionDTO.setLimitExceeded(true);
+    }
 
-      limitToday.setLimitBalance(leftover);
-      monthlyLimitService.setNewBalance(limitToday);
+    limitToday.setLimitBalance(leftover);
+    monthlyLimitService.setNewBalance(limitToday);
 
-      return transactionMapper.toDto(transactionRepository.save(transactionMapper.fromDto(transactionDTO)));
+    return transactionMapper.toDto(transactionRepository.save(transactionMapper.fromDto(transactionDTO)));
   }
 
   @Override

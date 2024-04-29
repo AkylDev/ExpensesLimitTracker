@@ -3,7 +3,6 @@ package kz.junior.task.services;
 
 import kz.junior.task.dto.MonthlyLimitDTO;
 
-import java.time.YearMonth;
 import java.util.List;
 
 public interface MonthlyLimitService {

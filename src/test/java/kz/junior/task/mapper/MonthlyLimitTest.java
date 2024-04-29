@@ -1,6 +1,6 @@
 package kz.junior.task.mapper;
 
-import kz.junior.task.dto.CategoryDTO;
+import kz.junior.task.TestData;
 import kz.junior.task.dto.MonthlyLimitDTO;
 import kz.junior.task.model.CategoryModel;
 import kz.junior.task.model.MonthlyLimitModel;
@@ -36,14 +36,7 @@ public class MonthlyLimitTest {
 
   @Test
   public void testDtoToModel(){
-    CategoryDTO category = new CategoryDTO();
-    category.setName("goods");
-
-    MonthlyLimitDTO dto = new MonthlyLimitDTO();
-    dto.setId(77L);
-    dto.setCreatedDate(ZonedDateTime.now(ZoneId.of("Asia/Almaty")));
-    dto.setLimitAmount(1000);
-    dto.setCategory(category);
+    MonthlyLimitDTO dto = TestData.testMonthlyLimitDtoData();
 
     MonthlyLimitModel model = mapper.fromDto(dto);
 

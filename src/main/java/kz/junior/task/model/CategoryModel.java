@@ -7,9 +7,6 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "t_category")
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class CategoryModel extends BaseModel{
   private String name;
 

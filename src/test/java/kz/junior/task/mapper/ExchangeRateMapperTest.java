@@ -1,5 +1,6 @@
 package kz.junior.task.mapper;
 
+import kz.junior.task.TestData;
 import kz.junior.task.dto.ExchangeRateDTO;
 import kz.junior.task.model.ExchangeRateModel;
 import org.junit.jupiter.api.Assertions;
@@ -29,11 +30,7 @@ public class ExchangeRateMapperTest {
 
   @Test
   public void testDtoToModel(){
-    ExchangeRateDTO dto = new ExchangeRateDTO();
-    dto.setId(1L);
-    dto.setKztValue(445);
-    dto.setRubValue(93);
-    dto.setTimeLastUpdate("01.01.2022");
+    ExchangeRateDTO dto = TestData.testExchangeRateDtoData();
 
     ExchangeRateModel model = mapper.fromDto(dto);
 
