@@ -59,7 +59,7 @@ CurrencyLimitTracker использует PostgerSQL для хранения д�
 
 ## Технологии
 
-- Java
+- Java 17
 - Spring Boot
 - Spring WEB
 - Spring Data JPA
@@ -67,4 +67,5 @@ CurrencyLimitTracker использует PostgerSQL для хранения д�
 - PostgreSQL
 - Gradle
 - Liquibase Migrations
+- Docker
 
