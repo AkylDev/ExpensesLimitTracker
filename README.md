@@ -54,7 +54,7 @@ git clone https://github.com/Akello-web/CurrencyLimitTracker.git
 
 ## База данных
 
-CurrencyLimitTracker использует PostgerSQL для хранения данных о транзакциях и месячных лимитах.
+ExpensesLimitTracker использует PostgerSQL для хранения данных о транзакциях и месячных лимитах.
 Также использует Liquibase для миграции данных.
 
 ## Технологии
