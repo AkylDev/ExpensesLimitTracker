@@ -49,7 +49,7 @@ git clone https://github.com/Akello-web/CurrencyLimitTracker.git
 #### Получение всех превысивших лимит транзакции
 
 ```http
-  POST /transactions
+  GET /transactions
 ```
 
 ## База данных
