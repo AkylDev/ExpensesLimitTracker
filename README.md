@@ -65,6 +65,7 @@ ExpensesLimitTracker использует PostgerSQL для хранения д�
 - Spring Data JPA
 - MapStruct
 - PostgreSQL
+- MongoDB
 - Gradle
 - Liquibase Migrations
 - Docker
