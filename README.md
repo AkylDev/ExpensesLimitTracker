@@ -14,7 +14,7 @@
 ## Установка и запуск:
 Копируем в свою машину:
 ```
-git clone https://github.com/Akello-web/CurrencyLimitTracker.git
+git clone https://github.com/Akello-web/ExpensesLimitTracker.git
 ```
 
 Внутри проекта запускаем через:
@@ -54,7 +54,7 @@ git clone https://github.com/Akello-web/CurrencyLimitTracker.git
 
 ## База данных
 
-ExpensesLimitTracker использует PostgerSQL для хранения данных о транзакциях и месячных лимитах.
+ExpensesLimitTracker использует PostgerSQL для хранения данных о транзакциях и месячных лимитах. И MongoDB для хранения данных биржевых курсов.
 Также использует Liquibase для миграции данных.
 
 ## Технологии
