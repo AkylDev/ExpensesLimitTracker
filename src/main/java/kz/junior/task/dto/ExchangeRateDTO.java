@@ -5,8 +5,8 @@ import lombok.*;
 @Getter
 @Setter
 public class ExchangeRateDTO {
-  private Long id;
-  private double kztValue;
-  private double rubValue;
+  private String id;
+  private double kzt;
+  private double rub;
   private String timeLastUpdate;
 }

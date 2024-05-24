@@ -15,16 +15,16 @@ public class ExchangeRateMapperTest {
   @Test
   public void testModelToDto(){
     ExchangeRateModel model = new ExchangeRateModel();
-    model.setId(1L);
-    model.setKztValue(445);
-    model.setRubValue(93);
+    model.setId("6650a978986aa67e330e0f25");
+    model.setKzt(445);
+    model.setRub(93);
     model.setTimeLastUpdate("01.01.2022");
 
     ExchangeRateDTO dto = mapper.toDto(model);
 
     Assertions.assertEquals(model.getId(), dto.getId());
-    Assertions.assertEquals(model.getKztValue(), dto.getKztValue());
-    Assertions.assertEquals(model.getRubValue(), dto.getRubValue());
+    Assertions.assertEquals(model.getKzt(), dto.getKzt());
+    Assertions.assertEquals(model.getRub(), dto.getRub());
     Assertions.assertEquals(model.getTimeLastUpdate(), dto.getTimeLastUpdate());
   }
 
@@ -35,8 +35,8 @@ public class ExchangeRateMapperTest {
     ExchangeRateModel model = mapper.fromDto(dto);
 
     Assertions.assertEquals(dto.getId(), model.getId());
-    Assertions.assertEquals(dto.getKztValue(), model.getKztValue());
-    Assertions.assertEquals(dto.getRubValue(), model.getRubValue());
+    Assertions.assertEquals(dto.getKzt(), model.getKzt());
+    Assertions.assertEquals(dto.getRub(), model.getRub());
     Assertions.assertEquals(dto.getTimeLastUpdate(), model.getTimeLastUpdate());
   }
 }

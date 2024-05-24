@@ -23,9 +23,9 @@ public class TestData {
 
   public static ExchangeRateDTO testExchangeRateDtoData(){
     ExchangeRateDTO exchangeRateDTO = new ExchangeRateDTO();
-    exchangeRateDTO.setId(22L);
-    exchangeRateDTO.setKztValue(465);
-    exchangeRateDTO.setRubValue(93);
+    exchangeRateDTO.setId("6650a978986aa67e330e0f25");
+    exchangeRateDTO.setKzt(465);
+    exchangeRateDTO.setRub(93);
     exchangeRateDTO.setTimeLastUpdate("Wed, 24 Apr 2024 00:00:01 +0000");
     return exchangeRateDTO;
   }
@@ -44,8 +44,8 @@ public class TestData {
     TransactionDTO transactionDTO = new TransactionDTO();
     transactionDTO.setId(44L);
     transactionDTO.setExpense(500);
-    transactionDTO.setKzt(500 * TestData.testExchangeRateDtoData().getKztValue());
-    transactionDTO.setRub(500 * TestData.testExchangeRateDtoData().getRubValue());
+    transactionDTO.setKzt(500 * TestData.testExchangeRateDtoData().getKzt());
+    transactionDTO.setRub(500 * TestData.testExchangeRateDtoData().getRub());
     transactionDTO.setTransactionDate(LocalDate.now());
     transactionDTO.setLimitExceeded(false);
     transactionDTO.setCategory(TestData.testCategoryDtoData());

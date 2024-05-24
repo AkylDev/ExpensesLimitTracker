@@ -35,8 +35,8 @@ public class TransactionServiceImpl implements TransactionService {
 
     transactionDTO.setTransactionDate(LocalDate.now());
     ExchangeRateDTO lastExchangeRateData = exchangeRateService.findLastDataFromTable();
-    transactionDTO.setKzt(lastExchangeRateData.getKztValue() * transactionDTO.getExpense());
-    transactionDTO.setRub(lastExchangeRateData.getRubValue() * transactionDTO.getExpense());
+    transactionDTO.setKzt(lastExchangeRateData.getKzt() * transactionDTO.getExpense());
+    transactionDTO.setRub(lastExchangeRateData.getRub() * transactionDTO.getExpense());
 
     int leftover = limitToday.getLimitBalance() - transactionDTO.getExpense();
     if (leftover < 0){

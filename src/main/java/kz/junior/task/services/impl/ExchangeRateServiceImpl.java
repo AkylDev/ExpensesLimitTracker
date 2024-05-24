@@ -46,8 +46,8 @@ public class ExchangeRateServiceImpl implements ExchangeRateService {
     String jsonResponse = getExchangeRateJson();
     ObjectMapper objectMapper = new ObjectMapper();
     ExchangeRatesApi exchangeRatesApi = objectMapper.readValue(jsonResponse, ExchangeRatesApi.class);
-    exchangeRateDto.setKztValue(exchangeRatesApi.getConversion_rates().get("KZT"));
-    exchangeRateDto.setRubValue(exchangeRatesApi.getConversion_rates().get("RUB"));
+    exchangeRateDto.setKzt(exchangeRatesApi.getConversion_rates().get("KZT"));
+    exchangeRateDto.setRub(exchangeRatesApi.getConversion_rates().get("RUB"));
     exchangeRateDto.setTimeLastUpdate(exchangeRatesApi.getTime_last_update_utc());
     exchangeRateRepository.save(exchangeMapper.fromDto(exchangeRateDto));
   }

@@ -3,13 +3,6 @@ CREATE TABLE t_category (
                             name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE t_exchange_rates (
-                                  id SERIAL PRIMARY KEY,
-                                  kzt DOUBLE PRECISION,
-                                  rub DOUBLE PRECISION,
-                                  updated_date VARCHAR(255)
-);
-
 CREATE TABLE t_monthly_limit (
                                  id SERIAL PRIMARY KEY,
                                  created_date TIMESTAMP(5) WITH TIME ZONE,

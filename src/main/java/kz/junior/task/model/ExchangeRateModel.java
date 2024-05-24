@@ -1,21 +1,20 @@
 package kz.junior.task.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "t_exchange_rates")
-public class ExchangeRateModel extends BaseModel {
-  @Column(name = "KZT")
-  private double kztValue;
+@Document(collection = "exchange_rates")
+public class ExchangeRateModel {
+  @Id
+  private String id;
 
-  @Column(name = "RUB")
-  private double rubValue;
+  private double kzt;
 
-  @Column(name = "updated_date")
+  private double rub;
+
   private String timeLastUpdate;
 }
