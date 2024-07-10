@@ -14,7 +14,7 @@
 ## Установка и запуск:
 Копируем в свою машину:
 ```
-git clone https://github.com/Akello-web/ExpensesLimitTracker.git
+git clone https://github.com/AkylDev/ExpensesLimitTracker.git
 ```
 
 Внутри проекта запускаем через:
